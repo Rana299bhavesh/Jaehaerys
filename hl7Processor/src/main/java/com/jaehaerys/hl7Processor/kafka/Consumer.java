@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-public class consumer {
+public class Consumer {
 
-    private static final Logger log = LoggerFactory.getLogger(consumer.class);
+    private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
     @KafkaListener(topics = "${hl7.topics}", groupId = "${hl7.groupId}" , concurrency = "${hl7.concurrency}")
     public void consume(ConsumerRecord<String, String> consumerRecord) throws Exception {
