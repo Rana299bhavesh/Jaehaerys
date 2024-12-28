@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 public class ConsumerTest {
 
     @Mock
-    private Consumer consumer; // Mocking the Consumer class
+    private Consumer consumer;
 
     @Test
     void testConsume() throws Exception {
