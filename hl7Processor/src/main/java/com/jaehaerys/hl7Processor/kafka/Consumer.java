@@ -1,20 +1,19 @@
 package com.jaehaerys.hl7Processor.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.common.protocol.types.Field;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import com.jaehaerys.hl7Processor.*;
-import java.util.Date;
 
 @Component
 public class Consumer {
 
-    @Autowired
-    private MessageProcessor messageProcessor;
+
+    MessageProcessor messageProcessor;
+
+    IBaseService iBaseService;
 
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
@@ -31,11 +30,11 @@ public class Consumer {
 
     }
 
-    private void messageSpliter(message message) {
+
+
+    private void messageSpliter(message message) throws Exception {
         String messageString= message.getMessageBlob();
         String[] segments = messageString.split("\r");
-        for (String segment : segments) {
-            System.out.println(segment); // Replace this with your processing logic
-        }
+        iBaseService.execute(segments,message);
     }
 }
