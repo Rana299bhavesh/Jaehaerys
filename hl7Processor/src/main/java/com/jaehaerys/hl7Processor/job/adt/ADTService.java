@@ -1,7 +1,6 @@
-package com.jaehaerys.hl7Processor.service.adt;
+package com.jaehaerys.hl7Processor.job.adt;
 
 import com.jaehaerys.hl7Processor.IBaseService;
-import com.jaehaerys.hl7Processor.message;
 
 public class ADTService implements IBaseService {
     @Override

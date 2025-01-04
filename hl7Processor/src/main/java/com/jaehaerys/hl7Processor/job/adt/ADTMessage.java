@@ -1,4 +1,4 @@
-package com.jaehaerys.hl7Processor.service.adt;
+package com.jaehaerys.hl7Processor.job.adt;
 
 import lombok.Data;
 
